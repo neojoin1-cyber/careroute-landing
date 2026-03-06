@@ -122,13 +122,24 @@ export default function App() {
               </p>
             )}
             {status === 'success' && (
-              <p className="text-green-700 font-bold text-base mt-3 flex items-center justify-center bg-green-50 py-3 rounded-lg border border-green-200">
-                <CheckCircle className="w-6 h-6 mr-2" /> 가이드 신청이 완료되었습니다! 메일을 확인해주세요.
+              <div className="mt-4 flex flex-col items-center p-4 bg-green-50 rounded-xl border border-green-200 shadow-sm">
+                <p className="text-green-700 font-bold text-base flex items-center justify-center mb-4">
+                  <CheckCircle className="w-6 h-6 mr-2" /> 가이드 신청 완료! 아래 버튼을 눌러주세요.
+                </p>
+                <a
+                  href="/가이드.pdf"
+                  download="CareRoute_외출여행_체크리스트.pdf"
+                  className="bg-green-600 hover:bg-green-700 text-white font-extrabold py-3 px-8 rounded-xl flex items-center shadow-lg transition-transform transform hover:scale-105"
+                >
+                  <FileText className="w-5 h-5 mr-2" /> PDF 가이드 지금 다운로드하기
+                </a>
+              </div>
+            )}
+            {status !== 'success' && (
+              <p className="text-sm text-gray-500 mt-4 flex items-center justify-center font-medium">
+                <ShieldCheck className="w-4 h-4 mr-1 text-gray-400" /> 스팸 메일을 보내지 않으며 언제든 취소할 수 있습니다.
               </p>
             )}
-            <p className="text-sm text-gray-500 mt-4 flex items-center justify-center font-medium">
-              <ShieldCheck className="w-4 h-4 mr-1 text-gray-400" /> 스팸 메일을 보내지 않으며 언제든 취소할 수 있습니다.
-            </p>
           </form>
 
           <div className="bg-blue-50 border border-blue-200 rounded-xl p-4 flex items-center text-left shadow-sm max-w-lg mx-auto">
@@ -363,9 +374,18 @@ export default function App() {
               </p>
             )}
             {status === 'success' && (
-              <p className="text-green-300 font-bold text-lg mt-4 flex items-center justify-center bg-blue-800/80 py-3 rounded-lg">
-                <CheckCircle className="w-6 h-6 mr-2" /> 1분 안에 메일로 가이드가 발송될 예정입니다!
-              </p>
+              <div className="mt-6 flex flex-col items-center p-5 bg-white/10 rounded-xl backdrop-blur-sm border border-white/20">
+                <p className="text-green-300 font-bold text-lg flex items-center justify-center mb-4">
+                  <CheckCircle className="w-6 h-6 mr-2" /> 신청 완료! 즉시 다운로드가 가능합니다.
+                </p>
+                <a
+                  href="/가이드.pdf"
+                  download="CareRoute_외출여행_체크리스트.pdf"
+                  className="bg-white text-blue-700 hover:bg-gray-100 font-extrabold py-4 px-10 rounded-xl flex items-center shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-all transform hover:scale-105"
+                >
+                  <FileText className="w-6 h-6 mr-2" /> PDF 파일 다운로드
+                </a>
+              </div>
             )}
           </form>
         </div>
