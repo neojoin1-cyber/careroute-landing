@@ -147,14 +147,14 @@ export default function App() {
             <FileText className="w-4 h-4 mr-2 text-gray-400" /> 아래 가이드북 전문을 PDF로 보내드립니다
           </p>
           <div className="bg-white p-2 sm:p-4 rounded-2xl shadow-sm border border-gray-200 w-full">
-            {/* 대표님이 올려주신 이미지가 /info.png 로 저장되어 있다고 가정하고 불러옵니다. */}
+            {/* 대표님이 올려주신 이미지가 /infographic_final_v3.png 로 저장되어 있다고 가정하고 불러옵니다. */}
             <img
-              src="/info.png"
+              src="/infographic_final_v3.png"
               alt="부모님과 함께하는 편안한 외출 가이드 인포그래픽"
               className="w-full h-auto rounded-xl object-contain bg-gray-50"
               onError={(e) => {
                 e.currentTarget.style.display = 'none';
-                e.currentTarget.parentElement?.insertAdjacentHTML('beforeend', '<div class="py-20 text-center text-gray-400 font-medium">여기에 인포그래픽 이미지가 표시됩니다.<br/>(public 폴더에 info.png 파일을 넣어주세요)</div>');
+                e.currentTarget.parentElement?.insertAdjacentHTML('beforeend', '<div class="py-20 text-center text-gray-400 font-medium">여기에 인포그래픽 이미지가 표시됩니다.<br/>(public 폴더에 infographic_final_v3.png 파일을 넣어주세요)</div>');
               }}
             />
           </div>
