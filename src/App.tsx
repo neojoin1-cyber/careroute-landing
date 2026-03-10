@@ -9,7 +9,10 @@ import {
   AlertCircle,
   ArrowRight,
   ShieldCheck,
-  FileText
+  FileText,
+  Clock,
+  Compass,
+  ClipboardList
 } from 'lucide-react';
 
 // ----------------------------------------------------------------------
@@ -271,7 +274,94 @@ export default function App() {
         </div>
       </section>
 
-      <section className="py-16 px-4 sm:px-6 bg-gray-100">
+      {/* --- 신뢰성 보강: 인포그래픽 기반 미리보기 섹션 --- */}
+      <section className="py-20 px-4 sm:px-6 bg-slate-50 border-t border-gray-200">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-800 font-bold px-4 py-1.5 rounded-full text-sm sm:text-base mb-4">
+              <ShieldCheck className="w-5 h-5 text-blue-600" />
+              검증된 안심 외출 설계법
+            </div>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-4 leading-tight">
+              가이드북 핵심 요약 미리보기
+            </h2>
+            <p className="text-lg sm:text-xl text-gray-600 font-medium leading-relaxed max-w-3xl mx-auto">
+              부모님과의 외출 만족도는 <strong>'얼마나 많이 보느냐'</strong>가 아니라 <strong>'얼마나 덜 힘드냐'</strong>에 달려 있습니다.<br className="hidden sm:block" />
+              WHO(세계보건기구) 및 NIH(미국국립보건원) 고령층 활동 가이드라인에 기초한 가장 안전한 설계법입니다.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {/* Card 1 */}
+            <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transform hover:-translate-y-1 transition-transform">
+              <div className="bg-blue-50 w-14 h-14 rounded-xl flex items-center justify-center mb-6">
+                <Heart className="w-7 h-7 text-blue-600" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">'많이'보다 '안정적인' 일정</h3>
+              <p className="text-gray-600 leading-relaxed">
+                과도한 보행을 피하고 부모님의 체력에 맞춘 여유로운 동선을 설계하세요.
+              </p>
+            </div>
+
+            {/* Card 2 */}
+            <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transform hover:-translate-y-1 transition-transform">
+              <div className="bg-blue-50 w-14 h-14 rounded-xl flex items-center justify-center mb-6">
+                <Compass className="w-7 h-7 text-blue-600" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">평지 중심의 동선 확보</h3>
+              <p className="text-gray-600 leading-relaxed">
+                계단과 경사를 피하고 엘리베이터, 평지 산책로, 벤치가 있는 장소를 선택해야 합니다.
+              </p>
+            </div>
+
+            {/* Card 3 */}
+            <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transform hover:-translate-y-1 transition-transform">
+              <div className="bg-orange-50 w-14 h-14 rounded-xl flex items-center justify-center mb-6">
+                <Clock className="w-7 h-7 text-orange-600" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">90분 단위의 필수 휴식</h3>
+              <p className="text-gray-600 leading-relaxed">
+                피로 누적을 방지하기 위해 일정 사이사이에 반드시 충분한 휴식 구간을 포함하세요.
+              </p>
+            </div>
+
+            {/* Card 4 */}
+            <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transform hover:-translate-y-1 transition-transform">
+              <div className="bg-blue-50 w-14 h-14 rounded-xl flex items-center justify-center mb-6">
+                <Coffee className="w-7 h-7 text-blue-600" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">식당 선택 최우선 규칙</h3>
+              <p className="text-gray-600 leading-relaxed">
+                맛집보다는 짧은 대기 시간, 등받이 좌석, 화장실 접근성이 좋은 식당이 최고의 선택입니다.
+              </p>
+            </div>
+
+            {/* Card 5 */}
+            <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transform hover:-translate-y-1 transition-transform">
+              <div className="bg-blue-50 w-14 h-14 rounded-xl flex items-center justify-center mb-6">
+                <Map className="w-7 h-7 text-blue-600" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">반나절 추천 코스 설계</h3>
+              <p className="text-gray-600 leading-relaxed">
+                이동 권 환경, 편의 시설 유무, 비상 대비(날씨, 컨디션) 등을 고려한 안전한 코스를 알려드립니다.
+              </p>
+            </div>
+
+            {/* Card 6 */}
+            <div className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transform hover:-translate-y-1 transition-transform">
+              <div className="bg-orange-50 w-14 h-14 rounded-xl flex items-center justify-center mb-6">
+                <ClipboardList className="w-7 h-7 text-orange-600" />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">실전 체크리스트 제공</h3>
+              <p className="text-gray-600 leading-relaxed">
+                외출 전부터 귀가할 때까지 놓치기 쉬운 세부 요소들을 한 장의 가이드로 완벽히 정리했습니다.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16 px-4 sm:px-6 bg-white">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-center text-gray-900 mb-10">이런 분들께 강력히 추천합니다!</h2>
           <div className="bg-white rounded-3xl p-8 sm:p-10 shadow-sm border border-gray-200">
