@@ -68,7 +68,9 @@ export default function App() {
     } catch (error) {
       console.error("이메일 저장 실패:", error);
       setStatus('error');
-      setErrorMessage('데이터베이스 연결 중 문제가 발생하거나 올바른 설정이 필요합니다.');
+      // 에러의 정확한 원인을 파악하기 위해 구글의 원본 에러 메시지를 화면에 출력합니다.
+      const rawError = error instanceof Error ? error.message : JSON.stringify(error);
+      setErrorMessage(`데이터베이스 에러: ${rawError}`);
     }
   };
 
