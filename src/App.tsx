@@ -127,7 +127,7 @@ export default function App() {
                   <CheckCircle className="w-6 h-6 mr-2" /> 가이드 신청 완료! 아래 버튼을 눌러주세요.
                 </p>
                 <a
-                  href="/가이드.pdf"
+                  href="/guide.pdf"
                   download="CareRoute_외출여행_체크리스트.pdf"
                   className="bg-green-600 hover:bg-green-700 text-white font-extrabold py-3 px-8 rounded-xl flex items-center shadow-lg transition-transform transform hover:scale-105"
                 >
@@ -379,7 +379,7 @@ export default function App() {
                   <CheckCircle className="w-6 h-6 mr-2" /> 신청 완료! 즉시 다운로드가 가능합니다.
                 </p>
                 <a
-                  href="/가이드.pdf"
+                  href="/guide.pdf"
                   download="CareRoute_외출여행_체크리스트.pdf"
                   className="bg-white text-blue-700 hover:bg-gray-100 font-extrabold py-4 px-10 rounded-xl flex items-center shadow-[0_0_20px_rgba(255,255,255,0.3)] transition-all transform hover:scale-105"
                 >
