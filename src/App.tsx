@@ -70,6 +70,27 @@ export default function App() {
         선착순 무료 배포 중! 부모님 외출·여행 필수 가이드 (PDF)
       </div>
 
+      {/* ----------------- IMAGE SECTION (인포그래픽) ----------------- */}
+      <section className="py-12 px-4 sm:px-6 bg-gray-100 flex-grow">
+        <div className="max-w-5xl mx-auto flex flex-col items-center">
+          <p className="text-gray-500 text-sm font-bold mb-4 bg-white px-4 py-2 rounded-full shadow-sm border border-gray-200 flex items-center">
+            <FileText className="w-4 h-4 mr-2 text-gray-400" /> 아래 가이드북 전문을 PDF로 보내드립니다
+          </p>
+          <div className="bg-white p-2 sm:p-4 rounded-2xl shadow-sm border border-gray-200 w-full">
+            {/* 대표님이 올려주신 이미지가 /infographic_final_v3.png 로 저장되어 있다고 가정하고 불러옵니다. */}
+            <img
+              src="/infographic_final_v3.png"
+              alt="부모님과 함께하는 편안한 외출 가이드 인포그래픽"
+              className="w-full h-auto rounded-xl object-contain bg-gray-50"
+              onError={(e) => {
+                e.currentTarget.style.display = 'none';
+                e.currentTarget.parentElement?.insertAdjacentHTML('beforeend', '<div class="py-20 text-center text-gray-400 font-medium">여기에 인포그래픽 이미지가 표시됩니다.<br/>(public 폴더에 infographic_final_v3.png 파일을 넣어주세요)</div>');
+              }}
+            />
+          </div>
+        </div>
+      </section>
+
       {/* ----------------- HERO SECTION ----------------- */}
       <header className="bg-white pt-16 pb-12 px-4 sm:px-6 lg:px-8 border-b border-gray-200">
         <div className="max-w-4xl mx-auto text-center">
@@ -139,27 +160,6 @@ export default function App() {
           </form>
         </div>
       </header>
-
-      {/* ----------------- IMAGE SECTION (인포그래픽) ----------------- */}
-      <section className="py-12 px-4 sm:px-6 bg-gray-100 flex-grow">
-        <div className="max-w-5xl mx-auto flex flex-col items-center">
-          <p className="text-gray-500 text-sm font-bold mb-4 bg-white px-4 py-2 rounded-full shadow-sm border border-gray-200 flex items-center">
-            <FileText className="w-4 h-4 mr-2 text-gray-400" /> 아래 가이드북 전문을 PDF로 보내드립니다
-          </p>
-          <div className="bg-white p-2 sm:p-4 rounded-2xl shadow-sm border border-gray-200 w-full">
-            {/* 대표님이 올려주신 이미지가 /infographic_final_v3.png 로 저장되어 있다고 가정하고 불러옵니다. */}
-            <img
-              src="/infographic_final_v3.png"
-              alt="부모님과 함께하는 편안한 외출 가이드 인포그래픽"
-              className="w-full h-auto rounded-xl object-contain bg-gray-50"
-              onError={(e) => {
-                e.currentTarget.style.display = 'none';
-                e.currentTarget.parentElement?.insertAdjacentHTML('beforeend', '<div class="py-20 text-center text-gray-400 font-medium">여기에 인포그래픽 이미지가 표시됩니다.<br/>(public 폴더에 infographic_final_v3.png 파일을 넣어주세요)</div>');
-              }}
-            />
-          </div>
-        </div>
-      </section>
 
       {/* ----------------- TARGET AUDIENCE (심플하게 수정) ----------------- */}
       <section className="py-12 px-4 sm:px-6 bg-white border-t border-gray-200">
